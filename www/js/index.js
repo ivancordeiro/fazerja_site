@@ -20,7 +20,7 @@ document.getElementById('conectando').style.display = 'none';
 document.getElementById('fechar').style.display = 'block';
 */
 
-atualizar();
+atualizarNew();
 
 }
 
@@ -30,6 +30,30 @@ function fechar(){
 navigator.app.exitApp();
 }
 
+
+
+
+
+function atualizarNew(){
+
+
+var conn = navigator.connection.type;
+if( conn == 'none' || conn == 'NONE' ){ //conn
+
+alert('O aplicativo nao detectou conexao com internet.');
+
+} else {
+
+var urlBrow = 'http://fazerja.com.br/site/index.php?app=s&tapp=i';
+//alert( 'urlBrow: ' + urlBrow );
+cordova.InAppBrowser.open(encodeURI( urlBrow ), '_self', 'location=no,hidden=no');
+
+}
+
+
+
+}
+	
 
 
 
